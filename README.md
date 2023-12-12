@@ -12,6 +12,7 @@ Setup instructions for Debian server for high school classroom.
 
 - setup hard drives and partions as follows:
   - ensure you have a "LARGE" swap file
+  - DO NOT load any software, only a GUI (if you want)
 ![Debian Server Partition setup](./images/Debian_drive_partion_setup.jpg)
 
 ## After OS Loading Setup
@@ -25,6 +26,12 @@ Setup instructions for Debian server for high school classroom.
     - ```sh
       nano /etc/pam.d/gdm-password
       auth required pam_succeed_if.so user != root quiet
+      ```
+  - install openssh_server:
+    - ```sh
+      apt install openssh-server -y
+      systemctl start ssh
+      systemctl status ssh
       ```
     - add course groups
     - ```sh

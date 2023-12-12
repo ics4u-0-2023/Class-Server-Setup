@@ -51,4 +51,4 @@ Setup instructions for Debian server for high school classroom.
     - update add user defaults
       - web directory
       - default file permissions
-    - run adduser script to ad in students
+    - run adduser script to add in students

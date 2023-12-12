@@ -17,14 +17,29 @@ Setup instructions for Debian server for high school classroom.
 
 - after the server is up and running the following changes
   - add mr-coxall user to sudo
+    - ```sh
+      usermod -aG sudo mr-coxall
+      ```
   - allow root to login to GUI:
     - ```sh
       nano /etc/pam.d/gdm-password
       auth required pam_succeed_if.so user != root quiet
       ```
     - add course groups
+    - ```sh
+      groupadd ICD2O
+      groupadd ICS3U
+      groupadd ICS4U
+      ```
     - load appache2
+    - ```sh
+      sudo apt install apache2 -y
+      ```
     - turn on user webpages for apache
+    - ```sh
+      a2enmod userdir
+      systemctl restart apache2
+      ```
     - update add user defaults
       - web directory
       - default file permissions

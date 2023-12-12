@@ -22,3 +22,10 @@ Setup instructions for Debian server for high school classroom.
       nano /etc/pam.d/gdm-password
       auth required pam_succeed_if.so user != root quiet
       ```
+    - add course groups
+    - load appache2
+    - turn on user webpages for apache
+    - update add user defaults
+      - web directory
+      - default file permissions
+    - run adduser script to ad in students

@@ -11,6 +11,7 @@ Setup instructions for Debian server for high school classroom.
   - 1 for /home directories
 
 - setup hard drives and partions as follows:
+  - ensure you have a "LARGE" swap file
 ![Debian Server Partition setup](./images/Debian_drive_partion_setup.jpg)
 
 ## After OS Loading Setup

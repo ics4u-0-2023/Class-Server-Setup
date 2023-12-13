@@ -93,6 +93,17 @@ Setup instructions for Debian server for high school classroom.
       apt install default-jdk -y
       java --version
       ```
+  - install C#
+    - ```sh
+      apt install mono-devel -y
+      mcs --version
+      mono --version
+      ```
+  - install Go
+    - ```sh
+      apt install golang-go -y
+      go --version
+      ```
   - add course groups
     - ```sh
       groupadd ICD2O

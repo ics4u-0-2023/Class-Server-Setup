@@ -17,7 +17,7 @@ Setup instructions for Debian server for high school classroom.
 
 ## After OS Loading Setup
 
-- after the server is up and running the following changes
+- after the server is up and running install the following, logged in as "root"!
   - update server packages
     - ```sh
       apt update && upgrade -y
@@ -45,6 +45,15 @@ Setup instructions for Debian server for high school classroom.
       apt install openssh-server -y
       systemctl start ssh
       systemctl status ssh
+      ```
+  - install NeoVim:
+    - ```sh
+      cd /tmp
+      apt-get install ninja-build gettext cmake unzip curl
+      git clone https://github.com/neovim/neovim
+      cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+      make install
+
       ```
     - add course groups
     - ```sh

@@ -18,6 +18,10 @@ Setup instructions for Debian server for high school classroom.
 ## After OS Loading Setup
 
 - after the server is up and running the following changes
+  - update server packages
+    - ```sh
+      apt update && upgrade -y
+      ```
   - add mr-coxall user to sudo
     - ```sh
       usermod -aG sudo mr-coxall
@@ -27,9 +31,11 @@ Setup instructions for Debian server for high school classroom.
       nano /etc/pam.d/gdm-password
       auth required pam_succeed_if.so user != root quiet
       ```
-  - install curl:
+  - install various Linux tools:
     - ```sh
       apt install curl -y
+      apt install tree -y
+      apt install neofetch -y
       ```
   - install openssh_server:
     - ```sh
@@ -65,7 +71,7 @@ Setup instructions for Debian server for high school classroom.
           echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
           goto: http://your-server-ip/info.php
           ```
-    - install gcc, g++
+    - install GNU compiler
         - ```sh
           apt install build-essential -y
           gcc --version
@@ -85,4 +91,9 @@ Setup instructions for Debian server for high school classroom.
     - update add user defaults
       - web directory
       - default file permissions
+      - force reset password
+      - default shell
     - run adduser script to add in students
+        - ```sh
+          useradd -m pcoxall
+          ```

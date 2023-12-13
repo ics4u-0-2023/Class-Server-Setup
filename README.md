@@ -12,7 +12,7 @@ Setup instructions for Debian server for high school classroom.
 
 - setup hard drives and partions as follows:
   - ensure you have a "LARGE" swap file
-  - DO NOT load any software, only a GUI (if you want)
+  - DO NOT load any software (web server, SSH, ...), only a GUI (if you want)
 ![Debian Server Partition setup](./images/Debian_drive_partion_setup.jpg)
 
 ## After OS Loading Setup
@@ -26,6 +26,10 @@ Setup instructions for Debian server for high school classroom.
     - ```sh
       nano /etc/pam.d/gdm-password
       auth required pam_succeed_if.so user != root quiet
+      ```
+  - install curl:
+    - ```sh
+      apt install curl -y
       ```
   - install openssh_server:
     - ```sh
@@ -48,6 +52,34 @@ Setup instructions for Debian server for high school classroom.
       a2enmod userdir
       systemctl restart apache2
       ```
+    - install PHP & MySQL
+    - ```sh
+      apt install php-fpm php-mysql -y
+      systemctl status php8.2-fpm
+      a2enmod proxy_fcgi setenvif
+      a2enconf php8.2-fpm
+      systemctl restart apache2
+      ```
+    - now test the PHP installation
+        - ```sh
+          echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
+          goto: http://your-server-ip/info.php
+          ```
+    - install gcc, g++
+        - ```sh
+          apt install build-essential -y
+          ```
+    - install bun
+        - ```sh
+          curl -fsSL https://bun.sh/install | bash
+          source /root/.bashrc
+          bun --help
+          ```
+    - install Java
+        - ```sh
+          apt install default-jdk -y
+          bun --help
+          ```
     - update add user defaults
       - web directory
       - default file permissions

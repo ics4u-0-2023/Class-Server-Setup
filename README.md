@@ -34,8 +34,11 @@ Setup instructions for Debian server for high school classroom.
   - install various Linux tools:
     - ```sh
       apt install curl -y
+      apt install git -y
+      apt install gh -y
       apt install tree -y
       apt install neofetch -y
+      apt install podman -y
       ```
   - install openssh_server:
     - ```sh
@@ -91,6 +94,7 @@ Setup instructions for Debian server for high school classroom.
     - update add user defaults
       - web directory
       - default file permissions
+      - set default .bashrc
       - force reset password
       - default shell
     - run adduser script to add in students

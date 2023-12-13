@@ -68,17 +68,19 @@ Setup instructions for Debian server for high school classroom.
     - install gcc, g++
         - ```sh
           apt install build-essential -y
+          gcc --version
+          g++ --version
           ```
     - install bun
         - ```sh
           curl -fsSL https://bun.sh/install | bash
           source /root/.bashrc
-          bun --help
+          bun --version
           ```
     - install Java
         - ```sh
           apt install default-jdk -y
-          bun --help
+          java --version
           ```
     - update add user defaults
       - web directory

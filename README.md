@@ -39,6 +39,8 @@ Setup instructions for Debian server for high school classroom.
       apt install tree -y
       apt install neofetch -y
       apt install podman -y
+      apt remove w3m -y
+      apt remove lynx -y
       ```
   - install openssh_server:
     - ```sh
@@ -114,8 +116,10 @@ Setup instructions for Debian server for high school classroom.
     - web directory
     - default file permissions
     - set default .bashrc
+      - in /etc/skel/.bashrc
     - force reset password
     - default shell
+      - sudo adduser --system --group test --shell /bin/bash
   - run adduser script to add in students
     - ```sh
       useradd -m pcoxall

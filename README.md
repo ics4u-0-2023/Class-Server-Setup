@@ -54,52 +54,51 @@ Setup instructions for Debian server for high school classroom.
       cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
       make install
       ```
-
-  - add course groups
-  - ```sh
-    groupadd ICD2O
-    groupadd ICS3U
-    groupadd ICS4U
-    ```
   - load appache2
-  - ```sh
-    sudo apt install apache2 -y
-    ```
+    - ```sh
+      sudo apt install apache2 -y
+      ```
   - turn on user webpages for apache
-  - ```sh
-    a2enmod userdir
-    systemctl restart apache2
-    ```
+    - ```sh
+      a2enmod userdir
+      systemctl restart apache2
+      ```
   - install PHP & MySQL
-  - ```sh
-    apt install php-fpm php-mysql -y
-    systemctl status php8.2-fpm
-    a2enmod proxy_fcgi setenvif
-    a2enconf php8.2-fpm
-    systemctl restart apache2
-    ```
+    - ```sh
+      apt install php-fpm php-mysql -y
+      systemctl status php8.2-fpm
+      a2enmod proxy_fcgi setenvif
+      a2enconf php8.2-fpm
+      systemctl restart apache2
+      ```
   - now test the PHP installation
-      - ```sh
-        echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
-        goto: http://your-server-ip/info.php
-        ```
+    - ```sh
+      echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
+      goto: http://your-server-ip/info.php
+      ```
   - install GNU compiler
-      - ```sh
-        apt install build-essential -y
-        gcc --version
-        g++ --version
-        ```
+    - ```sh
+      apt install build-essential -y
+      gcc --version
+      g++ --version
+      ```
   - install bun
-      - ```sh
-        curl -fsSL https://bun.sh/install | bash
-        source /root/.bashrc
-        bun --version
-        ```
+    - ```sh
+      curl -fsSL https://bun.sh/install | bash
+      source /root/.bashrc
+      bun --version
+      ```
   - install Java
-      - ```sh
-        apt install default-jdk -y
-        java --version
-        ```
+    - ```sh
+      apt install default-jdk -y
+      java --version
+      ```
+  - add course groups
+    - ```sh
+      groupadd ICD2O
+      groupadd ICS3U
+      groupadd ICS4U
+      ```
   - update add user defaults
     - web directory
     - default file permissions
@@ -107,10 +106,10 @@ Setup instructions for Debian server for high school classroom.
     - force reset password
     - default shell
   - run adduser script to add in students
-      - ```sh
-        useradd -m pcoxall
-        ```
+    - ```sh
+      useradd -m pcoxall
+      ```
   - reboot server!
-      - ```sh
-        reboot now
-        ```
+    - ```sh
+      reboot now
+      ```

@@ -141,5 +141,5 @@ Setup instructions for Debian server for high school classroom.
 
 - run the following
   - ```sh
-    curl -fsSL https://bun.sh/install | bash
+    curl -fsSL https://raw.githubusercontent.com/Mr-Coxall/Class-Server-Setup/main/setup.sh | bash
     ```

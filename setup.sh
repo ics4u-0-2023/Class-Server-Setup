@@ -44,7 +44,10 @@ g++ --version
 
 # Bun for node and typescript
 curl -fsSL https://bun.sh/install | bash
-source /root/.bashrc
+cp /root/.bun/bin/bun /usr/local/bin/
+chmod a+x /usr/local/bin/bun
+# should not have to do this any more
+# source /root/.bashrc
 bun --version
 
 # Java

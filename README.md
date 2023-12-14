@@ -114,6 +114,14 @@ Setup instructions for Debian server for high school classroom.
       ```
   - update add user defaults
     - web directory
+      - to make this work, permissions must be:
+        namei -m /home/mr-coxall/public_html/index.html 
+          f: /home/mr-coxall/public_html/index.html
+          drwxr-xr-x /
+          drwxr-xr-x home
+          drwxr-xr-x mr-coxall
+          drwxr-xr-x public_html
+          -rw-r--r-- index.html
     - default file permissions
     - set default .bashrc
       - in /etc/skel/.bashrc

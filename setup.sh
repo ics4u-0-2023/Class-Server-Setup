@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # setup script for classroom server
 
 apt update && upgrade -y

@@ -136,3 +136,10 @@ Setup instructions for Debian server for high school classroom.
     - ```sh
       reboot now
       ```
+
+## Setup Script
+
+- run the following
+  - ```sh
+    curl -fsSL https://bun.sh/install | bash
+    ```

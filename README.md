@@ -126,6 +126,9 @@ Setup instructions for Debian server for high school classroom.
     - set default .bashrc
       - in /etc/skel/.bashrc
     - force reset password
+      - ```sh
+        chage -d 0 user01
+        ```
     - default shell
       - sudo adduser --system --group test --shell /bin/bash
   - run adduser script to add in students

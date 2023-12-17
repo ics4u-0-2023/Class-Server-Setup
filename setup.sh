@@ -21,7 +21,7 @@ systemctl start ssh
 
 # NeoVim
 cd /tmp
-apt-get install ninja-build gettext cmake unzip curl
+apt-get install ninja-build gettext cmake unzip curl -y
 git clone https://github.com/neovim/neovim
 cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
 make install

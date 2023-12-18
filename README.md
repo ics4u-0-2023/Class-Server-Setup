@@ -140,6 +140,8 @@ Setup instructions for Debian server for high school classroom.
         ```
     - default shell
       - sudo adduser --system --group test --shell /bin/bash
+      - do not change for ICS4U students
+      - usermod -s /usr/bin/fish student
   - run adduser script to add in students
     - ```sh
       useradd -m pcoxall

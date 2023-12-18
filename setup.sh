@@ -10,6 +10,7 @@ apt install git -y
 apt install gh -y
 apt install tree -y
 apt install neofetch -y
+apt install tmux -y
 apt install podman -y
 apt remove w3m -y
 apt remove lynx -y

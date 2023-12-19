@@ -22,6 +22,7 @@ echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Deb
 curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_12/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
 apt update
 apt install fish -y
+curl -sS https://starship.rs/install.sh | sh
 
 # SSH
 apt install openssh-server -y

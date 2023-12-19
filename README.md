@@ -40,10 +40,11 @@ Setup instructions for Debian server for high school classroom.
       ```
   - add "Fish" shell
     - ```sh
-      echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/shells:fish:release:3.list
-      curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
-      sudo apt update
-      sudo apt install fish -y
+      cd /tmp
+      echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_12/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
+      curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_12/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
+      apt update
+      apt install fish -y
       curl -sS https://starship.rs/install.sh | sh
       ```
   - add mr-coxall user to sudo
@@ -158,6 +159,9 @@ Setup instructions for Debian server for high school classroom.
       - https://www.baeldung.com/linux/new-files-dirs-default-permission#:~:text=On%20Linux%2C%20by%20default%2C%20when,%2C%20and%20execute%20permissions%2C%20respectively.
     - set default .bashrc
       - in /etc/skel/.bashrc
+    - for NOT ICS4U, se Fish as default Shell
+      - Add the following to the end of ~/.config/fish/config.fish
+        - starship init fish | source
     - force reset password
       - ```sh
         chage -d 0 user01

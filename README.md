@@ -21,24 +21,20 @@ Setup instructions for Debian server for high school classroom.
   - update server packages
     - ```sh
       apt update && upgrade -y
+      apt install curl -y
       ```
   - change ttyd font size
     - ```sh
       dpkg-reconfigure console-setup
       ```
-  - allow root to login to GUI:
+- run the following setup script
+  - ```sh
+    curl -fsSL https://raw.githubusercontent.com/Mr-Coxall/Class-Server-Setup/main/setup.sh | bash
+    ```
+  - allow root to login to GUI (if you installed one!):
     - ```sh
       nano /etc/pam.d/gdm-password
       auth required pam_succeed_if.so user != root quiet
-      ```
-  - load appache2
-    - ```sh
-      sudo apt install apache2 -y
-      ```
-  - turn on user webpages for apache
-    - ```sh
-      a2enmod userdir
-      systemctl restart apache2
       ```
   - now test the PHP installation
     - ```sh
@@ -77,7 +73,7 @@ Setup instructions for Debian server for high school classroom.
       - https://www.baeldung.com/linux/new-files-dirs-default-permission#:~:text=On%20Linux%2C%20by%20default%2C%20when,%2C%20and%20execute%20permissions%2C%20respectively.
     - set default .bashrc
       - in /etc/skel/.bashrc
-    - for NOT ICS4U, se Fish as default Shell
+    - for NOT ICS4U, set Fish as default Shell
       - Add the following to the end of ~/.config/fish/config.fish
         - starship init fish | source
     - force reset password

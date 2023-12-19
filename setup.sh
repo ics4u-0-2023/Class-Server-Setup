@@ -5,6 +5,9 @@ cd /tmp
 # update server
 apt update && upgrade -y
 
+# add mr-coxall user to sudo
+usermod -aG sudo mr-coxall
+
 # Linux utilities to load and remove (terminal web servers)
 apt install curl -y
 apt install git -y
@@ -76,3 +79,9 @@ go --version
 groupadd ICD2O
 groupadd ICS3U
 groupadd ICS4U
+groupadd TEJ2O
+groupadd TEJ3M
+groupadd TEJ4M
+
+# reboot server
+reboot now

@@ -26,49 +26,10 @@ Setup instructions for Debian server for high school classroom.
     - ```sh
       dpkg-reconfigure console-setup
       ```
-  - install various Linux tools:
-    - ```sh
-      apt install curl -y
-      apt install git -y
-      apt install gh -y
-      apt install tree -y
-      apt install neofetch -y
-      apt install tmux -y
-      apt install podman -y
-      apt remove w3m -y
-      apt remove lynx -y
-      ```
-  - add "Fish" shell
-    - ```sh
-      cd /tmp
-      echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_12/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
-      curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_12/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
-      apt update
-      apt install fish -y
-      curl -sS https://starship.rs/install.sh | sh
-      ```
-  - add mr-coxall user to sudo
-    - ```sh
-      usermod -aG sudo mr-coxall
-      ```
   - allow root to login to GUI:
     - ```sh
       nano /etc/pam.d/gdm-password
       auth required pam_succeed_if.so user != root quiet
-      ```
-  - install openssh_server:
-    - ```sh
-      apt install openssh-server -y
-      systemctl start ssh
-      systemctl status ssh
-      ```
-  - install NeoVim:
-    - ```sh
-      cd /tmp
-      apt-get install ninja-build gettext cmake unzip curl -y
-      git clone https://github.com/neovim/neovim
-      cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
-      make install
       ```
   - load appache2
     - ```sh
@@ -79,53 +40,10 @@ Setup instructions for Debian server for high school classroom.
       a2enmod userdir
       systemctl restart apache2
       ```
-  - install PHP & MySQL
-    - ```sh
-      apt install mysql-server -y
-      apt install php-fpm php-mysql -y
-      systemctl status php8.2-fpm
-      a2enmod proxy_fcgi setenvif
-      a2enconf php8.2-fpm
-      systemctl restart apache2
-      ```
   - now test the PHP installation
     - ```sh
       echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
       goto: http://your-server-ip/info.php
-      ```
-  - install GNU compiler
-    - ```sh
-      apt install build-essential -y
-      gcc --version
-      g++ --version
-      ```
-  - install bun
-    - ```sh
-      curl -fsSL https://bun.sh/install | bash
-      source /root/.bashrc
-      bun --version
-      ```
-  - install Java
-    - ```sh
-      apt install default-jdk -y
-      java --version
-      ```
-  - install C#
-    - ```sh
-      apt install mono-devel -y
-      mcs --version
-      mono --version
-      ```
-  - install Go
-    - ```sh
-      apt install golang-go -y
-      go --version
-      ```
-  - add course groups
-    - ```sh
-      groupadd ICD2O
-      groupadd ICS3U
-      groupadd ICS4U
       ```
   - set a static IP address for the server
     - /etc/network/interfaces

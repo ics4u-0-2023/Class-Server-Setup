@@ -126,6 +126,24 @@ Setup instructions for Debian server for high school classroom.
       groupadd ICS3U
       groupadd ICS4U
       ```
+  - set a static IP address for the server
+    - /etc/network/interfaces
+      - # This file describes the network interfaces available on your system
+        # and how to activate them. For more information, see interfaces(5).
+
+        source /etc/network/interfaces.d/*
+
+        # The loopback network interface
+        auto lo
+        iface lo inet loopback
+
+        # The primary network interface
+        allow-hotplug enp1s0
+        iface enp1s0 inet static
+          address 172.22.52.80
+          netmask 255.255.255.0
+          gateway 172.22.52.1
+          dns-nameervers 8.8.8.8 8.8.4.4
   - update add user defaults
     - web directory
       - to make this work, permissions must be:

@@ -40,6 +40,7 @@ Setup instructions for Debian server for high school classroom.
       curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
       sudo apt update
       sudo apt install fish -y
+      curl -sS https://starship.rs/install.sh | sh
       ```
   - add mr-coxall user to sudo
     - ```sh
@@ -143,6 +144,8 @@ Setup instructions for Debian server for high school classroom.
       - sudo adduser --system --group test --shell /bin/bash
       - do not change for ICS4U students
       - usermod -s /usr/bin/fish student
+      - add this line to their .config/fish/config.fish
+        - starship init fish | source
   - run adduser script to add in students
     - ```sh
       useradd -m pcoxall

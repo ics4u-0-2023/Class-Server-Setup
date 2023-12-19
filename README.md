@@ -61,14 +61,6 @@ Setup instructions for Debian server for high school classroom.
           dns-nameervers 8.8.8.8 8.8.4.4
   - update add user defaults
     - web directory
-      - to make this work, permissions must be:
-        namei -m /home/mr-coxall/public_html/index.html 
-          f: /home/mr-coxall/public_html/index.html
-          drwxr-xr-x /
-          drwxr-xr-x home
-          drwxr-xr-x mr-coxall
-          drwxr-xr-x public_html
-          -rw-r--r-- index.html
     - default file permissions
       - for apache2, the home directory must be 711
       - https://www.baeldung.com/linux/new-files-dirs-default-permission#:~:text=On%20Linux%2C%20by%20default%2C%20when,%2C%20and%20execute%20permissions%2C%20respectively.
@@ -82,7 +74,10 @@ Setup instructions for Debian server for high school classroom.
         chage -d 0 user01
         ```
     - default shell
-      - sudo adduser --system --group test --shell /bin/bash
+      - adduser --group ICD2O --shell /bin/fish first.last
+      - adduser --group ICS4U --shell /bin/bash first.last
+      - change group setting
+        - sudo usermod -g www-data foobar
       - do not change for ICS4U students
       - usermod -s /usr/bin/fish student
       - add this line to their .config/fish/config.fish

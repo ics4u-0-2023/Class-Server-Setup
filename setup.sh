@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # setup script for classroom server
+cd /tmp
 
 # update server
 apt update && upgrade -y
@@ -15,13 +16,18 @@ apt install podman -y
 apt remove w3m -y
 apt remove lynx -y
 
+# add "Fish" shell
+echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_12/ /' | sudo tee /etc/apt/sources.list.d/shells:fish:release:3.list
+curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_12/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
+sudo apt update
+sudo apt install fish -y
+
 # SSH
 apt install openssh-server -y
 systemctl start ssh
 # systemctl status ssh
 
 # NeoVim
-cd /tmp
 apt-get install ninja-build gettext cmake unzip curl -y
 git clone https://github.com/neovim/neovim
 cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
@@ -31,6 +37,7 @@ make install
 sudo apt install apache2 -y
 a2enmod userdir
 systemctl restart apache2
+apt install mysql-server -y
 apt install php-fpm php-mysql -y
 systemctl status php8.2-fpm
 a2enmod proxy_fcgi setenvif

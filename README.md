@@ -75,6 +75,7 @@ Setup instructions for Debian server for high school classroom.
       ```
   - install PHP & MySQL
     - ```sh
+      apt install mysql-server -y
       apt install php-fpm php-mysql -y
       systemctl status php8.2-fpm
       a2enmod proxy_fcgi setenvif

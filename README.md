@@ -70,6 +70,7 @@ Setup instructions for Debian server for high school classroom.
           drwxr-xr-x public_html
           -rw-r--r-- index.html
     - default file permissions
+      - for apache2, the home directory must be 711
       - https://www.baeldung.com/linux/new-files-dirs-default-permission#:~:text=On%20Linux%2C%20by%20default%2C%20when,%2C%20and%20execute%20permissions%2C%20respectively.
     - set default .bashrc
       - in /etc/skel/.bashrc

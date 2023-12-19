@@ -74,10 +74,9 @@ Setup instructions for Debian server for high school classroom.
         chage -d 0 user01
         ```
     - default shell
-      - adduser --group ICD2O --shell /bin/fish first.last
+      - adduser --ingroup ICD2O --shell /bin/fish --allow-bad-names first2.last2
+      - useradd -m -g ICD2O -s /bin/fish -p password user.test3
       - adduser --group ICS4U --shell /bin/bash first.last
-      - change group setting
-        - sudo usermod -g www-data foobar
       - do not change for ICS4U students
       - usermod -s /usr/bin/fish student
       - add this line to their .config/fish/config.fish

@@ -41,13 +41,14 @@ make install
 apt install apache2 -y
 a2enmod userdir
 systemctl restart apache2
-apt install mysql-server -y
+# does not work?
+#apt install mysql-server -y
 apt install php-fpm php-mysql -y
 # systemctl status php8.2-fpm
 a2enmod proxy_fcgi setenvif
 a2enconf php8.2-fpm
 systemctl restart apache2
-echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
+echo "<?php phpinfo(); ?>" | tee /var/www/html/info.php
 
 # GNU tools
 apt install build-essential -y

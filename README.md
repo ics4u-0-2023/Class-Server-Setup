@@ -22,6 +22,10 @@ Setup instructions for Debian server for high school classroom.
     - ```sh
       apt update && upgrade -y
       ```
+  - change ttyd font size
+    - ```sh
+      dpkg-reconfigure console-setup
+      ```
   - install various Linux tools:
     - ```sh
       apt install curl -y

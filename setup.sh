@@ -88,5 +88,5 @@ groupadd TEJ3M
 groupadd TEJ4M
 
 # reboot server
-apt autoremove
+apt autoremove -y
 reboot now

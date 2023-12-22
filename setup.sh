@@ -8,6 +8,15 @@ apt update && upgrade -y
 # add mr-coxall user to sudo
 usermod -aG sudo mr-coxall
 
+# add "Fish" shell
+echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_12/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
+curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_12/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
+apt update
+apt install fish -y
+# :( you will have to press enter here!
+curl -sS https://starship.rs/install.sh | sh
+
+
 # Linux utilities to load and remove (terminal web servers)
 apt install curl -y
 apt install git -y
@@ -19,13 +28,6 @@ apt install podman -y
 apt install cmatrix -y
 apt remove w3m -y
 apt remove lynx -y
-
-# add "Fish" shell
-echo 'deb http://download.opensuse.org/repositories/shells:/fish:/release:/3/Debian_12/ /' | tee /etc/apt/sources.list.d/shells:fish:release:3.list
-curl -fsSL https://download.opensuse.org/repositories/shells:fish:release:3/Debian_12/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish_release_3.gpg > /dev/null
-apt update
-apt install fish -y
-curl -sS https://starship.rs/install.sh | sh
 
 # SSH
 apt install openssh-server -y

@@ -43,29 +43,19 @@ Setup instructions for Debian server for high school classroom.
       ```
   - set a static IP address for the server
     - /etc/network/interfaces
-      - # This file describes the network interfaces available on your system
-        # and how to activate them. For more information, see interfaces(5).
-
-        source /etc/network/interfaces.d/*
-
-        # The loopback network interface
-        auto lo
-        iface lo inet loopback
-
-        # The primary network interface
+      - ```sh
         allow-hotplug enp1s0
         iface enp1s0 inet static
           address 172.22.52.80
           netmask 255.255.255.0
           gateway 172.22.52.1
           dns-nameervers 8.8.8.8 8.8.4.4
+        ```
   - update add user defaults
-    - web directory
+    - copy over the /etc/skel/ directory
     - default file permissions
       - for apache2, the home directory must be 711
       - https://www.baeldung.com/linux/new-files-dirs-default-permission#:~:text=On%20Linux%2C%20by%20default%2C%20when,%2C%20and%20execute%20permissions%2C%20respectively.
-    - set default .bashrc
-      - in /etc/skel/.bashrc
     - for NOT ICS4U, set Fish as default Shell
       - Add the following to the end of ~/.config/fish/config.fish
         - starship init fish | source
@@ -75,24 +65,7 @@ Setup instructions for Debian server for high school classroom.
         ```
     - default shell
       - adduser --ingroup ICD2O --shell /bin/fish --allow-bad-names first2.last2
-      - useradd -m -g ICD2O -s /bin/fish -p password user.test3
-      - adduser --group ICS4U --shell /bin/bash first.last
-      - do not change for ICS4U students
-      - usermod -s /usr/bin/fish student
+      - adduser --ingroup ICS4U --shell /bin/bash --allow-bad-names first.last
       - add this line to their .config/fish/config.fish
         - starship init fish | source
-  - run adduser script to add in students
-    - ```sh
-      useradd -m pcoxall
-      ```
-  - reboot server!
-    - ```sh
-      reboot now
-      ```
-
-## Setup Script
-
-- run the following
-  - ```sh
-    curl -fsSL https://raw.githubusercontent.com/Mr-Coxall/Class-Server-Setup/main/setup.sh | bash
-    ```
+         - echo -e "starship init fish | source" >> ~/.config/fish/config.fish

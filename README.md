@@ -66,6 +66,8 @@ Setup instructions for Debian server for high school classroom.
     - default shell
       - adduser --ingroup ICD2O --shell /bin/fish --allow-bad-names first2.last2
       - adduser --ingroup ICS4U --shell /bin/bash --allow-bad-names first.last
-      - add this line to their .config/fish/config.fish
-        - starship init fish | source
-         - echo -e "starship init fish | source" >> ~/.config/fish/config.fish
+      - run this
+        - ```sh
+          echo -e "starship init fish | source" >> ~/.config/fish/config.fish
+          chmod 711 ~/
+          ```

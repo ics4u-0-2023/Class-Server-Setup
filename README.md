@@ -55,8 +55,8 @@ Setup instructions for Debian server for high school classroom.
     - copy over the /etc/skel/ directory
 
     - default shell
-      - adduser --ingroup ICD2O --shell /bin/fish --allow-bad-names first2.last2
-      - adduser --ingroup ICS4U --shell /bin/bash --allow-bad-names first.last
+      - adduser --ingroup ICD2O --shell /bin/fish --allow-bad-names -comment "First Last" first2.last2
+      - adduser --ingroup ICS4U --shell /bin/bash --allow-bad-names -comment "First Last" first.last
       - run this
         - ```sh
           echo -e "starship init fish | source" >> ~/.config/fish/config.fish

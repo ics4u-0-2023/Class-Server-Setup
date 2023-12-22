@@ -60,6 +60,6 @@ Setup instructions for Debian server for high school classroom.
       - run this
         - ```sh
           echo -e "starship init fish | source" >> ~/.config/fish/config.fish
-          chmod 711 ~/
+          chmod 711 ~/first.last
           chage -d 0 user01
           ```

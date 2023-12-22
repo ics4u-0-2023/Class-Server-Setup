@@ -16,7 +16,6 @@ apt install fish -y
 # :( you will have to press enter here!
 curl -sS https://starship.rs/install.sh | sh
 
-
 # Linux utilities to load and remove (terminal web servers)
 apt install curl -y
 apt install git -y

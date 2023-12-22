@@ -21,7 +21,7 @@ Setup instructions for Debian server for high school classroom.
   - update server packages
     - ```sh
       apt update && upgrade -y
-      apt install curl -y
+      apt install git -y
       ```
   - change ttyd font size
     - ```sh
@@ -29,7 +29,10 @@ Setup instructions for Debian server for high school classroom.
       ```
 - run the following setup script
   - ```sh
-    curl -fsSL https://raw.githubusercontent.com/Mr-Coxall/Class-Server-Setup/main/setup.sh | bash
+    cd /tmp
+    git clone https://raw.githubusercontent.com/Mr-Coxall/Class-Server-Setup/main/setup.sh
+    ./Class-Server-Setup/setup.sh
+    cp ./Class-Server-Setup/files/ /etc/skel/
     ```
   - allow root to login to GUI (if you installed one!):
     - ```sh

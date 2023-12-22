@@ -4,6 +4,7 @@ cd /tmp
 
 # update server
 apt update && upgrade -y
+cp ./Class-Server-Setup/files/ /etc/skel/
 
 # add mr-coxall user to sudo
 usermod -aG sudo mr-coxall

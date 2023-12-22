@@ -38,7 +38,7 @@ Setup instructions for Debian server for high school classroom.
       ```
   - now test the PHP installation
     - ```sh
-      echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
+      echo "<?php phpinfo(); ?>" | tee /var/www/html/info.php
       goto: http://your-server-ip/info.php
       ```
   - set a static IP address for the server

@@ -53,16 +53,7 @@ Setup instructions for Debian server for high school classroom.
         ```
   - update add user defaults
     - copy over the /etc/skel/ directory
-    - default file permissions
-      - for apache2, the home directory must be 711
-      - https://www.baeldung.com/linux/new-files-dirs-default-permission#:~:text=On%20Linux%2C%20by%20default%2C%20when,%2C%20and%20execute%20permissions%2C%20respectively.
-    - for NOT ICS4U, set Fish as default Shell
-      - Add the following to the end of ~/.config/fish/config.fish
-        - starship init fish | source
-    - force reset password
-      - ```sh
-        chage -d 0 user01
-        ```
+
     - default shell
       - adduser --ingroup ICD2O --shell /bin/fish --allow-bad-names first2.last2
       - adduser --ingroup ICS4U --shell /bin/bash --allow-bad-names first.last
@@ -70,4 +61,5 @@ Setup instructions for Debian server for high school classroom.
         - ```sh
           echo -e "starship init fish | source" >> ~/.config/fish/config.fish
           chmod 711 ~/
+          chage -d 0 user01
           ```

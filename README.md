@@ -39,7 +39,7 @@ Setup instructions for Debian server for high school classroom.
       nano /etc/pam.d/gdm-password
       auth required pam_succeed_if.so user != root quiet
       ```
-  - now test the PHP installation
+  - now test apache2 & PHP installation
     - ```sh
       goto: http://your-server-ip/info.php
       ```
@@ -53,8 +53,6 @@ Setup instructions for Debian server for high school classroom.
           gateway 172.22.52.1
           dns-nameervers 8.8.8.8 8.8.4.4
         ```
-  - update add user defaults
-    - copy over the /etc/skel/ directory
 
     - default shell
       - adduser --ingroup ICD2O --shell /bin/fish --allow-bad-names -comment "First Last" first2.last2

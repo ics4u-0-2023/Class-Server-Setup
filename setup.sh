@@ -80,6 +80,10 @@ mono --version
 apt install golang-go -y
 go --version
 
+# Pascal
+apt install fpc -y
+fpc -V
+
 # class groups
 groupadd ICD2O
 groupadd ICS3U

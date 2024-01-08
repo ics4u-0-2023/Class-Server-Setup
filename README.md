@@ -58,7 +58,5 @@ Setup instructions for Debian server for high school classroom.
       - adduser --ingroup ICS4U --shell /bin/bash --allow-bad-names -comment "First Last" first.last
       - run this
         - ```sh
-          echo -e "starship init fish | source" >> ~/.config/fish/config.fish
           chmod 711 ~/first.last
-          chage -d 0 first.last
           ```

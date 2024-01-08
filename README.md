@@ -62,5 +62,5 @@ Setup instructions for Debian server for high school classroom.
         ```
       - run this
         - ```sh
-          chmod 711 ~/first.last
+          sudo chmod 711 ~/first.last
           ```

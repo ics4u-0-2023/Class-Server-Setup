@@ -64,7 +64,7 @@ Setup instructions for Debian server for high school classroom.
   - ```sh
     sudo adduser --ingroup ICS4U --shell /bin/bash --allow-bad-names -comment "First Last" first.last
     ```
-  - run this
+  - run this after adding a user, so that their home page works
     - ```sh
       sudo chmod 711 ~/first.last
       ```

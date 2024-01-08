@@ -82,7 +82,7 @@ go --version
 
 # Pascal
 apt install fpc -y
-fpc -V
+# fpc -V
 
 # class groups
 groupadd ICD2O

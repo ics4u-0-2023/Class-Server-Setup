@@ -52,7 +52,11 @@ Setup instructions for Debian server for high school classroom.
           gateway 172.22.52.1
           dns-nameervers 8.8.8.8 8.8.4.4
         ```
-
+    - install cron to reboot daily
+      - sudo crontab -e
+      - ```sh
+        0 4   *   *   *    /sbin/shutdown -r +5
+        ```
     - default shell
       - ```sh
         sudo adduser --ingroup ICD2O --shell /bin/fish --allow-bad-names -comment "First Last" first2.last2

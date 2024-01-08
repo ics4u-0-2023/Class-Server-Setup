@@ -57,7 +57,7 @@ Setup instructions for Debian server for high school classroom.
   - ```sh
     0 4   *   *   *    /sbin/shutdown -r +5
     ```
-- default shell
+## How to add a user
   - ```sh
     sudo adduser --ingroup ICD2O --shell /bin/fish --allow-bad-names -comment "First Last" first2.last2
     ```

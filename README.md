@@ -54,8 +54,12 @@ Setup instructions for Debian server for high school classroom.
         ```
 
     - default shell
-      - adduser --ingroup ICD2O --shell /bin/fish --allow-bad-names -comment "First Last" first2.last2
-      - adduser --ingroup ICS4U --shell /bin/bash --allow-bad-names -comment "First Last" first.last
+      - ```sh
+        sudo adduser --ingroup ICD2O --shell /bin/fish --allow-bad-names -comment "First Last" first2.last2
+        ```
+      - ```sh
+        sudo adduser --ingroup ICS4U --shell /bin/bash --allow-bad-names -comment "First Last" first.last
+        ```
       - run this
         - ```sh
           chmod 711 ~/first.last

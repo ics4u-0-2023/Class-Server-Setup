@@ -68,3 +68,7 @@ Setup instructions for Debian server for high school classroom.
     - ```sh
       sudo chmod 711 ~/first.last
       ```
+# How to delete a user
+  - ```sh
+  sudo deluser --remove-all-files zishuo.zhuang
+  ```

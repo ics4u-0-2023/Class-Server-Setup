@@ -75,11 +75,8 @@ Setup instructions for Debian server for high school classroom.
     - ```sh
       sudo ssh-keygen -t rsa -f ./first.last/.ssh/ssh_key -C first.last -b 2048
       ```
-      
-  - create SSH keys for a user
-    - https://cloud.google.com/compute/docs/connect/create-ssh-keys#:~:text=Open%20a%20terminal%20and%20use,a%20new%20SSH%20key%20pair.&text=Replace%20the%20following%3A,named%20my%2Dssh%2Dkey.
 
-# How to delete a user
+## How to delete a user
 
   - ```sh
   sudo deluser --remove-all-files zishuo.zhuang

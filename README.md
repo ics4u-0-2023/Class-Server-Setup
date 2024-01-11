@@ -61,13 +61,19 @@ Setup instructions for Debian server for high school classroom.
   - ```sh
     sudo adduser --ingroup ICD2O --shell /bin/fish --allow-bad-names -comment "First Last" first2.last2
     ```
+    
   - ```sh
     sudo adduser --ingroup ICS4U --shell /bin/bash --allow-bad-names -comment "First Last" first.last
     ```
+    
   - run this after adding a user, so that their home page works
     - ```sh
       sudo chmod 711 ~/first.last
       ```
+      
+  - create SSH keys for a user
+    - https://cloud.google.com/compute/docs/connect/create-ssh-keys#:~:text=Open%20a%20terminal%20and%20use,a%20new%20SSH%20key%20pair.&text=Replace%20the%20following%3A,named%20my%2Dssh%2Dkey.
+
 # How to delete a user
   - ```sh
   sudo deluser --remove-all-files zishuo.zhuang

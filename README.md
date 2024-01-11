@@ -82,3 +82,10 @@ Setup instructions for Debian server for high school classroom.
     - ```sh
     sudo deluser --remove-all-files zishuo.zhuang
     ```
+
+## How to delete a user
+
+  - run this after adding a user, for ICD2O to create thier SSH key for them
+    - ```sh
+      sudo ssh-keygen -t rsa -f ./first.last/.ssh/ssh_key -C first.last -b 2048
+      ```

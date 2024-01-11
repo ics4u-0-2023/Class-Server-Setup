@@ -75,6 +75,7 @@ Setup instructions for Debian server for high school classroom.
     - https://cloud.google.com/compute/docs/connect/create-ssh-keys#:~:text=Open%20a%20terminal%20and%20use,a%20new%20SSH%20key%20pair.&text=Replace%20the%20following%3A,named%20my%2Dssh%2Dkey.
 
 # How to delete a user
+
   - ```sh
   sudo deluser --remove-all-files zishuo.zhuang
   ```

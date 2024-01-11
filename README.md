@@ -77,7 +77,7 @@ Setup instructions for Debian server for high school classroom.
       ```
 
 ## How to delete a user
-
-  - ```sh
-  sudo deluser --remove-all-files zishuo.zhuang
-  ```
+  - to delete a user
+    - ```sh
+    sudo deluser --remove-all-files zishuo.zhuang
+    ```

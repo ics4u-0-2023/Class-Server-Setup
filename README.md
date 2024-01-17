@@ -71,11 +71,6 @@ Setup instructions for Debian server for high school classroom.
       sudo chmod 711 ~/first.last
       ```
 
-  - run this after adding a user, for ICD2O to create thier SSH key for them
-    - ```sh
-      sudo ssh-keygen -t rsa -f ./first.last/.ssh/ssh_key -C first.last -b 2048
-      ```
-
 ## How to delete a user
 
   - to delete a user

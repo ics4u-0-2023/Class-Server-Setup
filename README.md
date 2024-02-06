@@ -30,8 +30,10 @@ Setup instructions for Debian server for high school classroom.
 - run the following setup script
   - ```sh
     cd /tmp
-    git clone git@github.com:Mr-Coxall/Class-Server-Setup.git
-    ./Class-Server-Setup/setup.sh
+    git clone https://github.com/Mr-Coxall/Class-Server-Setup
+    cd Class-Server-Setup
+    chmod +x ./setup
+    ./setup.sh
     ```
   - allow root to login to GUI (if you installed one!):
     - ```sh
